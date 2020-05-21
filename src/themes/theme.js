@@ -1,7 +1,7 @@
 // Theme
 
 export default {
-    font: {
+    fonts: {
         main: "Muli, sans-serif",
       },
 
@@ -10,7 +10,7 @@ export default {
         secondary: "#FF6F0B",
         gray: "#737B7D",
         white: "#ffffff",
-        light: "#f8f8f8",
+        light: "#f4f5f4",
         },
     
     breakpoints: {
