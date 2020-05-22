@@ -1,11 +1,13 @@
 import React from "react"
-import { Container } from "../components"
+import { Layout } from "../components"
+
 
 const IndexPage = () => {
     return (
-        <Container>
+    
+        <Layout>
         <h1>Hello world</h1>
-        </Container>
+        </Layout>
     )
 }
 
