@@ -1,6 +1,11 @@
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `Theo's Gatsby Starter`,
+    description: `Gatsby starter using styled-components`,
+    author: `@theodenanyoh`,
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
