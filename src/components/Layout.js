@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import Navbar from "../components/Navbar/Navbar"
 
 import { MainWrapper } from "./LayoutComponents"
 
@@ -20,8 +21,9 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <Navbar />
         <MainWrapper>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
           <main>{children}</main>
           <Footer />
         </MainWrapper>

@@ -12,7 +12,7 @@ export default {
         white: "#ffffff",
         light: "#f4f5f4",
         },
-    
+     
     breakpoints: {
         mobile: "only screen and (min-width: 29.938rem)",
         tablet: "only screen and (min-width: 48rem)",

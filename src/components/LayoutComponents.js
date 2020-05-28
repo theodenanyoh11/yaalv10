@@ -44,3 +44,18 @@ export const Column = styled.div`
   margin: ${props => (props.margin ? props.margin : "0")};
   width: ${props => (props.width ? props.width : "auto")};
 `
+
+export const NavWrapper = styled.div`
+width: 90%;
+margin: 0 auto;
+
+@media ${props => props.theme.breakpoints.tablet} {
+    width: 80%;
+
+}
+
+@media ${props => props.theme.breakpoints.desktop} {
+    width: 75%;
+
+}
+`

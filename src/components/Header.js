@@ -3,13 +3,12 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import { Container } from "./LayoutComponents"
+import Nav from "./Nav"
 
 const Header = ({ siteTitle, className }) => (
   <header className={className}>
     <Container>
-      <h1>
-        <Link to="/">{siteTitle}</Link>
-      </h1>
+    
     </Container>
   </header>
 )
@@ -23,8 +22,11 @@ Header.defaultProps = {
 }
 
 const StyledHeader = styled(Header)`
-  color: var(--white);
-  background: var(--primary-color);
+  position: fixed;
+  top:0;
+  right:0;
+  left:0;
+  background-color: ${props => props.theme.colors.primary};
   padding: 1rem 0;
   margin-bottom: 1rem;
   h1 {

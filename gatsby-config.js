@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Theo's Gatsby Starter`,
-    description: `Gatsby starter using styled-components`,
-    author: `@theodenanyoh`,
+    title: "Theo Denanyoh Gatsby Starter",
+    titleTemplate: "%s · Theo's starter",
+    description:
+      "Hogwarts Potions master, Head of Slytherin house and former Death Eater.",
+    url: "https://www.doe.com", // No trailing slash allowed!
+    image: "/images/snape.jpg", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@occlumency",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
