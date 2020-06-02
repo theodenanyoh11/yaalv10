@@ -4,14 +4,17 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
+
+
 const NavItem = styled(Link)`
   text-decoration: none;
-  color: #111;
+  color: ${props => props.theme.colors.primary};
   display: inline-block;
   white-space: nowrap;
   margin: 0 1vw;
   transition: all 200ms ease-in;
   position: relative;
+  padding: 20px 0px;
 
   :after {
     position: absolute;
@@ -33,20 +36,24 @@ const NavItem = styled(Link)`
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 20px 0;
-    font-size: 1.5rem;
+  @media (min-width: 768px) {
+    padding: 35px 32px;
     z-index: 6;
   }
 `
+const NavMenu = styled.div`
+position: relative;
+float: right;
+`
+
 const NavbarLinks = () => {
   return (
-    <>
+    <NavMenu>
+      <NavItem to="/">Episodes</NavItem>
       <NavItem to="/">About</NavItem>
-      <NavItem to="/404">Services</NavItem>
-      <NavItem to="/">Gallery</NavItem>
-      <NavItem to="/404">Contact</NavItem>
-    </>
+      <NavItem to="/">Contact</NavItem>
+  
+    </NavMenu>
   )
 }
 

@@ -2,33 +2,38 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
+import LogoIcon from "./LogoIcon"
+
+const LogoContainer = styled.div`
+display:flex;
+justify-content: space-between;
+align-items: center;
+flex:1;  
+position:relative; 
+  z-index: 3;
+  height: 70px;
+
+`
 
 const LogoWrap = styled.div`
-  margin: auto 0;
-  flex: 0 1 76px;
-
-  @media (max-width: 768px) and (orientation: landscape) {
-    flex: 0 1 25px;
-  }
+  position:relative; 
+  float: left;
+  color: #333;
+  
+  
 `
 const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(name: { eq: "primary_logo" }, extension: { eq: "png" }) {
-        childImageSharp {
-          fluid(maxWidth: 110, pngQuality: 90) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+  
 
   return (
-    <LogoWrap as={Link} to="/">
-      <Img fluid={data.file.childImageSharp.fluid} alt="logo" />
-    </LogoWrap>
+    <LogoContainer>
+      <LogoWrap as={Link} to="/">
+        <LogoIcon />
+       
+      </LogoWrap>
+    </LogoContainer>
+
   )
 }
 

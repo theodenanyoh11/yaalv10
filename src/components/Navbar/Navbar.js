@@ -5,18 +5,21 @@ import styled from "styled-components"
 import NavbarLinks from "./NavbarLinks"
 import Logo from "./Logo"
 
+
+
 const Navigation = styled.nav`
   height: 10vh;
   display: flex;
   background-color: #fff;
-  position: relative;
-  justify-content: space-between;
-  text-transform: uppercase;
-  border-bottom: 2px solid #33333320;
+  position: sticky;
+  top:0;
+  justify-content: center;
+  box-shadow: 0 1px 1px 0.5px rgba(0,0,0,.1);
   margin: 0 auto;
   padding: 0 5vw;
-  z-index: 2;
-  align-self: center;
+  z-index: 1000;
+  align-items: center;
+  
 
   @media (max-width: 768px) {
     position: sticky;
@@ -25,6 +28,19 @@ const Navigation = styled.nav`
     left: 0;
     right: 0;
     left: 0;
+  }
+`
+const Wrapper = styled.div`
+  postion:relative;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  top: 0;
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `
 
@@ -93,24 +109,28 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
 
   return (
-    <Navigation>
-      <Logo />
-      <Toggle
-        navbarOpen={navbarOpen}
-        onClick={() => setNavbarOpen(!navbarOpen)}
-      >
-        {navbarOpen ? <Hamburger open /> : <Hamburger />}
-      </Toggle>
-      {navbarOpen ? (
-        <Navbox>
-          <NavbarLinks />
-        </Navbox>
-      ) : (
-        <Navbox open>
-          <NavbarLinks />
-        </Navbox>
-      )}
-    </Navigation>
+        <Navigation>
+          <Wrapper>
+          <Logo />
+            <Toggle
+              navbarOpen={navbarOpen}
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              {navbarOpen ? <Hamburger open /> : <Hamburger />}
+            </Toggle>
+            {navbarOpen ? (
+              <Navbox>
+                <NavbarLinks />
+              </Navbox>
+            ) : (
+              <Navbox open>
+                <NavbarLinks />
+              </Navbox>
+            )}
+          </Wrapper>
+      </Navigation>
+
+  
   )
 }
 
